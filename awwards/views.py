@@ -1,5 +1,6 @@
 from django.shortcuts import render,redirect
 from .forms import RegisterForm
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def register(request):
@@ -13,5 +14,6 @@ def register(request):
         register_form=RegisterForm()
     return render(request,'registration/register.html',{'form':register_form})
 
+@login_required
 def index(request):
     return render(request, 'index.html')
