@@ -1,9 +1,11 @@
-from django.urls import path
+from django.urls import path,include
 from . import views
 from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
+    path('register/',views.register,name='register'),
+    path('', include('django.contrib.auth.urls',)),
     path('',views.index,name='index')
 ]
 
