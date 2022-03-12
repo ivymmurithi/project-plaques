@@ -13,6 +13,18 @@ class Profile(models.Model):
     def __str__(self):
         return self.user.username
 
+    def save_profile(self):
+        """
+        Save profile objects
+        """
+        self.save()
+
+    def delete_profile(self):
+        """
+        Delete profile objects
+        """
+        self.delete()
+
 class Project(models.Model):
     title = models.CharField(max_length=30,null=True, blank=True)
     website_picture = models.ImageField(upload_to='uploads/',null=True, blank=True)
@@ -25,3 +37,15 @@ class Project(models.Model):
 
     def __str__(self):
         return self.title
+
+    def save_project(self):
+        """
+        Save project objects
+        """
+        self.save()
+
+    def delete_project(self):
+        """
+        Delete project objects
+        """
+        self.delete()
