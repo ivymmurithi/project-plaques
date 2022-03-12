@@ -12,7 +12,7 @@
                 <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="">Profile</a>
+                <a class="nav-link" href="{%url 'profiles'%}">Profile</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{%url 'logout'%}">Logout</a>
@@ -23,7 +23,7 @@
             <input name="profiles" class="form-control mr-sm-2 text-line" id="searchInput" type="search"
                 placeholder="Search eg: mukami" aria-label="Search">
             <button class="btn btn-sm btn-outline-dark rounded-pill my-2 my-sm-0 searchtext"
-                type="submit">Search</button>
+                type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
         </form>
     </div>
 </nav>

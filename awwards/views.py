@@ -20,6 +20,10 @@ def index(request):
     return render(request, 'index.html')
 
 @login_required
+def profiles(request):
+    return render(request, 'profiles.html')
+
+@login_required
 def logout(request):
     logout(request)
     return redirect('login')
