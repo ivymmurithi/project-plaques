@@ -1,3 +1,36 @@
-.h1 {
-    color: blanchedalmond;
+.text-line {
+  background-color: transparent;
+  color: #eeeeee;
+  outline: none;
+  outline-style: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: solid white 1px;
+  padding: 3px 10px;
+}
+
+.searchtext,
+.text-line,
+::placeholder,
+input,
+button {
+  font-family: "Special Elite", cursive !important;
+  color: white !important;
+}
+
+::placeholder {
+  font-size: 0.9rem;
+}
+
+.navbar-brand {
+  font-family: "Satisfy", cursive;
+  color: white !important;
+}
+
+.nav-link,
+.text-line,
+.searchtext {
+  font-family: "Special Elite", cursive;
+  color: white !important;
 }
