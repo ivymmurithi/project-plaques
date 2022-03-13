@@ -6,11 +6,11 @@ from django.conf.urls.static import static
 from rest_framework.routers import DefaultRouter
 
 router = DefaultRouter()
-router.register(r'api/profile',views.ProfileViewSet, basename='profile')
-router.register(r'api/project', views.ProjectViewSet, basename='project')
+router.register(r'profile',views.ProfileViewSet, basename='profile')
+router.register(r'project', views.ProjectViewSet, basename='project')
 
 urlpatterns = [
-    path('',include(router.urls)),
+    path('api/',include(router.urls)),
     path('register/',views.register,name='register'),
     path('', include('django.contrib.auth.urls')),
     path('',views.index,name='index'),
