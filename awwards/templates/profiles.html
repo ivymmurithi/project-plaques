@@ -58,7 +58,7 @@
     </form>
 </div>
 
-
+<div class="grid-container gallery">
 {% for project in projects %}
     <div class="card" style="width: 18rem;">
         <img class="card-img-top" src="{{project.website_picture.url}}" alt="Card image cap">
@@ -68,6 +68,7 @@
             <a href="{{project.website_link}}">{{project.url_text}}</a>
         </div>
     </div>
+</div>
 {% endfor %}
 
 {% endblock %}

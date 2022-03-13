@@ -49,3 +49,7 @@ span {
 .card-title {
   font-family: "Raleway", sans-serif;
 }
+
+.gallery {
+  display: grid !important;
+}
