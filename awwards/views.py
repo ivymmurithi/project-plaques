@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 from .forms import RegisterForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
+from .models import Profile,Project
 
 # Create your views here.
 def register(request):
@@ -21,7 +22,10 @@ def index(request):
 
 @login_required
 def profiles(request):
-    return render(request, 'profiles.html')
+    # import pdb; pdb.set_trace()
+    current_user = request.user
+    profile_object = Profile.objects.all().filter(user=current_user.id)
+    return render(request, 'profiles.html',{'profiles':profile_object})
 
 @login_required
 def logout(request):
