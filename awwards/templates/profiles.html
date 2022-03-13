@@ -13,11 +13,21 @@
     }
 </style>
 
-<form action="" method="POST" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{profile_form|crispy}}
-    <button class="btn btn-outline-warning" type="submit">Upload</button>
-</form>
+<div class="uploadbtn">
+    <a class="btn btn-outline btn-sm btn-rounded uploadButton" style="background-color: #333333;" href="#!"
+        role="button" type="button" data-toggle="collapse" data-target="#collapseUploads" aria-expanded="false"
+        aria-controls="collapseExample">
+        Upload Profile
+    </a>
+</div>
+
+<div class="collapse" id="collapseUploads">
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{profile_form|crispy}}
+        <button class="btn btn-outline-warning" type="submit">Upload</button>
+    </form>
+</div>
 
 {% for profile in profiles %}
     <div class="card" style="width: 18rem;">
