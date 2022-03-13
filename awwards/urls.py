@@ -9,6 +9,7 @@ urlpatterns = [
     path('',views.index,name='index'),
     path('profiles/',views.profiles,name='profiles'),
     path('logout',views.logout,name='logout'),
+    path('uploadproject',views.uploadproject,name='uploadproject'),
 ]
 
 if settings.DEBUG:

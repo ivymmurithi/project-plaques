@@ -10,10 +10,7 @@
   padding: 3px 10px;
 }
 
-.searchtext,
 .text-line,
-::placeholder,
-input,
 button {
   font-family: "Special Elite", cursive !important;
   color: white !important;
@@ -29,8 +26,7 @@ button {
 }
 
 .nav-link,
-.text-line,
-.searchtext {
+.text-line {
   font-family: "Special Elite", cursive;
   color: white !important;
 }
@@ -51,5 +47,5 @@ span {
 
 .card-text,
 .card-title {
-font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
 }

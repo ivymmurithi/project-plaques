@@ -42,6 +42,23 @@
 
 <p class="text-center projects">Projects</p>
 
+<div class="uploadbtn">
+    <a class="btn btn-outline btn-sm btn-rounded uploadButton" style="background-color: #333333;" href="#!"
+        role="button" type="button" data-toggle="collapse" data-target="#collapseUpload" aria-expanded="false"
+        aria-controls="collapseExample">
+        Upload Project
+    </a>
+</div>
+
+<div class="collapse" id="collapseUpload">
+    <form action="{% url 'uploadproject' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{project_form|crispy}}
+        <button class="btn btn-outline-warning" type="submit">Upload</button>
+    </form>
+</div>
+
+
 {% for project in projects %}
     <div class="card" style="width: 18rem;">
         <img class="card-img-top" src="{{project.website_picture.url}}" alt="Card image cap">
@@ -51,7 +68,6 @@
             <a href="{{project.website_link}}">{{project.url_text}}</a>
         </div>
     </div>
-
 {% endfor %}
 
 {% endblock %}

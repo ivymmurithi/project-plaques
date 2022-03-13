@@ -10,8 +10,8 @@ class Profile(models.Model):
     contact_info = models.CharField(max_length=30 ,null=True, blank=True)
     user = models.OneToOneField(User, null=True, blank=True, on_delete=models.CASCADE)
 
-    # def __str__(self):
-    #     return self.user.username
+    def __str__(self):
+        return self.user.username
 
     def save_profile(self):
         """
