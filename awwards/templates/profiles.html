@@ -33,9 +33,9 @@
     <div class="card" style="width: 18rem;">
         <img class="card-img-top" src="{{profile.profile_picture.url}}" alt="Card image cap">
         <div class="card-body">
-            <p class="card-text">{{profile.user}}</p>
-            <p class="card-text">{{profile.bio}}</p>
-            <p class="card-text">{{profile.contact_info}}</p>
+            <p class="card-text"><strong> Username:</strong>{{profile.user}}</p>
+            <p class="card-text"><strong> Bio:</strong> {{profile.bio}}</p>
+            <p class="card-text"><strong> Contact Info: </strong> {{profile.contact_info}}</p>
         </div>
     </div>
 {% endfor %}
@@ -46,10 +46,9 @@
     <div class="card" style="width: 18rem;">
         <img class="card-img-top" src="{{project.website_picture.url}}" alt="Card image cap">
         <div class="card-body">
-            <p class="card-title">Title: {{project.title}}</p>
-            <p class="card-text">Description: {{project.description}}</p>
+            <p class="card-title"><strong> Title:</strong> {{project.title}}</p>
+            <p class="card-text"><strong> Description:</strong> {{project.description}}</p>
             <a href="{{project.website_link}}">{{project.url_text}}</a>
-            <p class="card-text">{{project.contact_info}}</p>
         </div>
     </div>
 
