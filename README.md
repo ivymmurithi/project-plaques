@@ -13,14 +13,15 @@ Post your projects, rate your own and other peoples projects!
 
 ## Technologies Used
 1. Django
-2. Postgres
-3. Bootstrap
-4. Coolors
-5. Google Fonts
-6. Unsplash
-7. Python3
-8. jQuery
-9. JavaScript
+2. Django REST framework
+3. Postgres
+4. Bootstrap
+5. Coolors
+6. Google Fonts
+7. Unsplash
+8. Python3
+9. jQuery
+10. JavaScript
 
 ## Author
 Ivy Murithi
