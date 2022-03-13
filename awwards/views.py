@@ -3,6 +3,9 @@ from .forms import RegisterForm,ProfileForm,ProjectForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
 from .models import Profile,Project
+from rest_framework import viewsets
+from .serializer import ProfileSerializer,ProjectSerializer
+from rest_framework import permissions
 
 # Create your views here.
 def register(request):
@@ -63,3 +66,16 @@ def uploadproject(request):
 def logout(request):
     logout(request)
     return redirect('login')
+
+class ProfileViewSet(viewsets.ModelViewSet):
+    queryset = Profile.objects.all()
+    serializer_class = ProfileSerializer
+
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+
+
+class ProjectViewSet(viewsets.ModelViewSet):
+    queryset = Project.objects.all()
+    serializer_class = ProjectSerializer
+
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
