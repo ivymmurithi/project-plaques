@@ -34,3 +34,9 @@ button {
   font-family: "Special Elite", cursive;
   color: white !important;
 }
+
+
+.navbar-toggler,span {
+    background-color: white;
+    width: 8%;
+}
