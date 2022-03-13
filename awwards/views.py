@@ -34,8 +34,9 @@ def profiles(request):
     else: 
         current_user = request.user
         profile_object = Profile.objects.all().filter(user=current_user.id)
+        project_object = Project.objects.all().filter(user=current_user.id)
         profile_form = ProfileForm()
-    return render(request, 'profiles.html',{'profiles':profile_object,'profile_form':profile_form})
+    return render(request, 'profiles.html',{'profiles':profile_object,'profile_form':profile_form,'projects':project_object})
 
 @login_required
 def logout(request):

@@ -1,7 +1,7 @@
-from email.policy import default
 from django.db import models
 from django.contrib.auth.models import User
 from django.core.validators import MaxValueValidator,MinValueValidator
+from urllib.parse import urlparse
 
 # Create your models here.
 class Profile(models.Model):
@@ -49,3 +49,7 @@ class Project(models.Model):
         Delete project objects
         """
         self.delete()
+
+    def url_text(self):
+        parsed_url = urlparse(self.website_link)
+        return parsed_url.hostname.replace("www.","")+"/..."

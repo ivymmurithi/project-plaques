@@ -40,4 +40,19 @@
     </div>
 {% endfor %}
 
+<p class="text-center projects">Projects</p>
+
+{% for project in projects %}
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="{{project.website_picture.url}}" alt="Card image cap">
+        <div class="card-body">
+            <p class="card-title">Title: {{project.title}}</p>
+            <p class="card-text">Description: {{project.description}}</p>
+            <a href="{{project.website_link}}">{{project.url_text}}</a>
+            <p class="card-text">{{project.contact_info}}</p>
+        </div>
+    </div>
+
+{% endfor %}
+
 {% endblock %}

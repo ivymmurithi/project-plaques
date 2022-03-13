@@ -35,8 +35,16 @@ button {
   color: white !important;
 }
 
+.navbar-toggler,
+span {
+  background-color: white;
+  width: 8%;
+}
 
-.navbar-toggler,span {
-    background-color: white;
-    width: 8%;
+.projects {
+  font-family: "Satisfy", cursive;
+  color: white;
+  font-size: 1.8rem;
+  margin-top: 4%;
+  margin-bottom: 4%;
 }
