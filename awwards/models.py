@@ -35,8 +35,8 @@ class Project(models.Model):
     content_score = models.PositiveIntegerField(default=1, validators=[MaxValueValidator(10), MinValueValidator(1)], null=True, blank=True)
     user = models.ForeignKey(User, null=True, blank=True, on_delete=models.CASCADE)
 
-    # def __str__(self):
-    #     return self.title
+    def __str__(self):
+        return self.title
 
     def save_project(self):
         """
