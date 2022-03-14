@@ -9,7 +9,7 @@ Post your projects, rate your own and other peoples projects!
 2. Upload image and add a bio to your profile.
 3. Upload projects to your profile feed.
 4. Rate your own projects and other people's projects
-5. Search for mukami to view the only established account for now.
+5. Search for mukami to view and vote for the only established account for now.
 
 ## Technologies Used
 1. Django
