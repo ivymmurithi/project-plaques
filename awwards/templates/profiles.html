@@ -82,6 +82,7 @@
             <div class="collapse" id="voteUpload{{project.id}}">
                 <form action="/vote/{{project.id}}/" method="POST">
                     {% csrf_token %}
+                    <p><strong>VOTE BETWEEN 1 AND 10</strong></p>
                     {{vote_form|crispy}}
                     <button class="btn btn-outline-warning voteBtn" id="votingBtn{{project.id}}" type="submit">Vote</button>
                 </form>
