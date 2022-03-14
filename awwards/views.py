@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from .forms import RegisterForm,ProfileForm,ProjectForm,VotingForm
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth import logout
+from django.contrib.auth import logout as django_logout
 from .models import Profile,Project
 from rest_framework import viewsets
 from .serializer import ProfileSerializer,ProjectSerializer
@@ -89,7 +89,7 @@ def results(request):
 
 @login_required
 def logout(request):
-    logout(request)
+    django_logout(request)
     return redirect('login')
 
 class ProfileViewSet(viewsets.ModelViewSet):
