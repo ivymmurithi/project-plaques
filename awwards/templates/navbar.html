@@ -18,7 +18,7 @@
                 <a class="nav-link" href="{%url 'logout'%}">Logout</a>
             </li>
         </ul>
-        <form action="" method="POST" class="form-inline my-2 my-lg-0">
+        <form action="{% url 'results' %}" method="POST" class="form-inline my-2 my-lg-0">
             {% csrf_token %}
             <input name="profiles" class="form-control mr-sm-2 text-line" id="searchInput" type="search"
                 placeholder="Search eg: mukami" aria-label="Search">

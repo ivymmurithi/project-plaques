@@ -6,6 +6,7 @@ from .models import Profile,Project
 from rest_framework import viewsets
 from .serializer import ProfileSerializer,ProjectSerializer
 from rest_framework import permissions
+from django.contrib import messages
 
 # Create your views here.
 def register(request):
@@ -72,6 +73,19 @@ def vote(request, project_id):
     else:
         vote_form = VotingForm()
     return render(request, 'profiles.html',{'vote_form':vote_form})
+
+@login_required
+def results(request):
+    if request.method == 'POST':
+        if 'profiles' in request.POST and request.POST['profiles']:
+            searched_profile = request.POST['profiles']
+            profile_objects = Profile.objects.filter(user__username__icontains=searched_profile)
+            profile_ids = [profile.user.id for profile in profile_objects]
+            projects_objects = Project.objects.filter(user_id__in=profile_ids)
+            return render(request, 'search.html', {'searchedprofiles':profile_objects,'searchedprojects':projects_objects})
+        else:
+            messages.error(request, "User does not exist!")
+    return render(request, 'search.html')
 
 @login_required
 def logout(request):
