@@ -72,18 +72,18 @@
 
 
             <div class="uploadbtn">
-                <a class="btn btn-outline btn-sm btn-rounded uploadButton" style="background-color: #333333;" href="#!"
-                    role="button" type="button" data-toggle="collapse" data-target="#voteUpload" aria-expanded="false"
-                    aria-controls="collapseExample">
+                <a class="btn btn-outline btn-sm btn-rounded uploadButton" style="background-color: #333333;"
+                    role="button" type="button" data-toggle="collapse" data-target="#voteUpload{{project.id}}" aria-expanded="false"
+                    aria-controls="collapseExample{{project.id}}">
                     Vote
                 </a>
             </div>
 
-            <div class="collapse" id="voteUpload">
+            <div class="collapse" id="voteUpload{{project.id}}">
                 <form action="/vote/{{project.id}}/" method="POST">
                     {% csrf_token %}
                     {{vote_form|crispy}}
-                    <button class="btn btn-outline-warning voteBtn" type="submit">Vote</button>
+                    <button class="btn btn-outline-warning voteBtn" id="votingBtn{{project.id}}" type="submit">Vote</button>
                 </form>
             </div>
         </div>
