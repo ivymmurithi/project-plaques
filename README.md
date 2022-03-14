@@ -4,6 +4,9 @@ Project Plaques
 # Desciption
 Post your projects, rate your own and other peoples projects!
 
+[Project API](https://project-plaques.herokuapp.com/api/project/)
+[Profile API](https://project-plaques.herokuapp.com/api/profile/)
+
 ## How to Use
 1. Login or register if you don't have an account.
 2. Upload image and add a bio to your profile.
