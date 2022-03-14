@@ -58,14 +58,6 @@ span {
   color: black !important;
 }
 
-/* .gifs {
-  display: grid !important;
-  grid-template-columns: auto auto auto !important;
-  width: 100% !important;
-  margin: 0 auto !important;
-  margin-top: 5% !important;
-} */
-
 .gifcard {
   display: grid !important;
   grid-template-columns: auto auto auto !important;
