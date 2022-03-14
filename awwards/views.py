@@ -28,17 +28,12 @@ def index(request):
 def profiles(request):
     if request.method == 'POST':
         profile = Profile.objects.get(user_id = request.session['_auth_user_id'])
-        # project = Project.objects.get(user_id = request.session['_auth_user_id'])
         form = ProfileForm(request.POST, request.FILES, instance=profile)
-        # project_form = ProjectForm(request.POST,request.FILES,instance=project)
         if form.is_valid():
-            # import pdb; pdb.set_trace()
             form.save()
-            # project_form.save()
             return redirect('/profiles/',{'profile_form':form})
         else:
             profile_form = ProfileForm()
-            # project_form = ProjectForm()
     else: 
         current_user = request.user
         profile_object = Profile.objects.all().filter(user=current_user.id)
@@ -68,7 +63,6 @@ def uploadproject(request):
 @login_required
 def vote(request, project_id):
     if request.method == 'POST':
-        # import pdb; pdb.set_trace()
         project = Project.objects.get(pk=project_id)
         vote_form = VotingForm(request.POST, instance=project)
         if vote_form.is_valid():
