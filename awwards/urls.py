@@ -17,6 +17,7 @@ urlpatterns = [
     path('profiles/',views.profiles,name='profiles'),
     path('logout',views.logout,name='logout'),
     path('uploadproject',views.uploadproject,name='uploadproject'),
+    path('vote/<int:project_id>/',views.vote,name='vote'),
 ]
 
 if settings.DEBUG:

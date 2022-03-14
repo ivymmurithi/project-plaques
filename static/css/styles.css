@@ -53,3 +53,7 @@ span {
 .gallery {
   display: grid !important;
 }
+
+.voteBtn {
+  color: black !important;
+}

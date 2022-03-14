@@ -21,3 +21,12 @@ class ProjectForm(forms.ModelForm):
     class Meta:
         model = Project
         fields = ['website_picture','title','description','website_link']
+
+class VotingForm(forms.ModelForm):
+
+    class Meta:
+        model = Project
+        fields = ['design_score','usability_score','content_score']
+        widgets = {
+            'Dropdown': forms.Select(attrs={'id':'choice'}),
+        }

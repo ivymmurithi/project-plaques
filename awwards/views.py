@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from .forms import RegisterForm,ProfileForm,ProjectForm
+from .forms import RegisterForm,ProfileForm,ProjectForm,VotingForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
 from .models import Profile,Project
@@ -24,6 +24,7 @@ def index(request):
     return render(request, 'index.html')
 
 @login_required
+# Create Profile
 def profiles(request):
     if request.method == 'POST':
         profile = Profile.objects.get(user_id = request.session['_auth_user_id'])
@@ -44,9 +45,11 @@ def profiles(request):
         project_object = Project.objects.all().filter(user=current_user.id)
         profile_form = ProfileForm()
         project_form = ProjectForm()
-    return render(request, 'profiles.html',{'profiles':profile_object,'profile_form':profile_form,'projects':project_object,'project_form':project_form})
+        vote_form = VotingForm()
+    return render(request, 'profiles.html',{'profiles':profile_object,'profile_form':profile_form,'projects':project_object,'project_form':project_form,'vote_form':vote_form})
 
 @login_required
+# Update Profile
 def uploadproject(request):
     if request.method == 'POST':
         form = ProjectForm(request.POST, request.FILES)
@@ -61,6 +64,21 @@ def uploadproject(request):
     else:
         form = ProjectForm()
     return render(request,'profiles.html',{'project_form':form})
+
+@login_required
+def vote(request, project_id):
+    if request.method == 'POST':
+        # import pdb; pdb.set_trace()
+        project = Project.objects.get(pk=project_id)
+        vote_form = VotingForm(request.POST, instance=project)
+        if vote_form.is_valid():
+            vote_form.save()
+            return redirect('/profiles/',{'vote_form':vote_form})
+        else:
+            vote_form = VotingForm()
+    else:
+        vote_form = VotingForm()
+    return render(request, 'profiles.html',{'vote_form':vote_form})
 
 @login_required
 def logout(request):

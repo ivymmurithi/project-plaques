@@ -66,6 +66,22 @@
             <p class="card-title"><strong> Title:</strong> {{project.title}}</p>
             <p class="card-text"><strong> Description:</strong> {{project.description}}</p>
             <a href="{{project.website_link}}">{{project.url_text}}</a>
+
+            <div class="uploadbtn">
+                <a class="btn btn-outline btn-sm btn-rounded uploadButton" style="background-color: #333333;" href="#!"
+                    role="button" type="button" data-toggle="collapse" data-target="#voteUpload" aria-expanded="false"
+                    aria-controls="collapseExample">
+                    Vote
+                </a>
+            </div>
+
+            <div class="collapse" id="voteUpload">
+                <form action="/vote/{{project.id}}/" method="POST">
+                    {% csrf_token %}
+                    {{vote_form|crispy}}
+                    <button class="btn btn-outline-warning voteBtn" type="submit">Vote</button>
+                </form>
+            </div>
         </div>
     </div>
 </div>

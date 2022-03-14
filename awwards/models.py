@@ -30,13 +30,13 @@ class Project(models.Model):
     website_picture = models.ImageField(upload_to='uploads/',null=True, blank=True)
     description = models.TextField(null=True, blank=True)
     website_link = models.URLField(max_length=255,null=True, blank=True)
-    design_score = models.IntegerField(default=1, validators=[MaxValueValidator(10), MinValueValidator(1)], null=True, blank=True)
-    usability_score = models.IntegerField(default=1, validators=[MaxValueValidator(10), MinValueValidator(1)], null=True, blank=True)
-    content_score = models.IntegerField(default=1, validators=[MaxValueValidator(10), MinValueValidator(1)], null=True, blank=True)
+    design_score = models.PositiveIntegerField(default=1, validators=[MaxValueValidator(10), MinValueValidator(1)], null=True, blank=True)
+    usability_score = models.PositiveIntegerField(default=1, validators=[MaxValueValidator(10), MinValueValidator(1)], null=True, blank=True)
+    content_score = models.PositiveIntegerField(default=1, validators=[MaxValueValidator(10), MinValueValidator(1)], null=True, blank=True)
     user = models.ForeignKey(User, null=True, blank=True, on_delete=models.CASCADE)
 
-    def __str__(self):
-        return self.title
+    # def __str__(self):
+    #     return self.title
 
     def save_project(self):
         """
